@@ -15,10 +15,7 @@ int binary_search(int *array, size_t size, int value)
 	size_t high = size - 1;
 	size_t mid  = NULL;
 
-	if (array == NULL)
-		return (-1);
-
-	while (low <= high)
+	while (array && low <= high)
 	{
 		printer(array, low, high);
 		mid = (low + high) / 2;
