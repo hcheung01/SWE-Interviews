@@ -2,5 +2,5 @@
 #define _SEARCH _ALGOS_H_
 
 int binary_search(int *array, size_t size, int value);
-
+void printer(int *array, int i, int size);
 #endif
