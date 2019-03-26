@@ -12,10 +12,10 @@
 void printer(int *array, int i, int size)
 {
 	printf("Searching in array: ");
-	for (; i < size; i++)
+	for (; i <= size; i++)
 	{
 		printf("%d", array[i]);
-		if (i < size - 1)
+		if (i < size)
 			printf(", ");
 	}
 	printf("\n");
@@ -33,24 +33,24 @@ void printer(int *array, int i, int size)
 int binary_search(int *array, size_t size, int value)
 {
 	int low = 0;
-	int high = size;
-	int mid = NULL;
+	int high = size - 1;
+	int mid  = NULL;
 
 	printer(array, low, high);
-	while (low < high)
+	while (low <= high)
 	{
-		mid = (low + high) / 2;
-		if (array[mid] == value)
+		mid = high - (high - low) / 2;
+		if (value == array[mid])
 			return (mid);
-		if (array[mid] < value)
+		else if (value < array[mid])
 		{
-			low = mid + 1;
-			printer(array, low - 1, high);
+			high = mid - 1;
+			printer(array, low, high);
 		}
 		else
 		{
-			high = mid - 1;
-			printer(array, low, high + 1);
+			low = mid + 1;
+			printer(array, low - 1, high);
 		}
 	}
 	return (-1);
