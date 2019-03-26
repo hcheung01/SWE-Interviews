@@ -18,22 +18,16 @@ int binary_search(int *array, size_t size, int value)
 	if (array == NULL)
 		return (-1);
 
-	printer(array, low, high);
 	while (low <= high)
 	{
-		mid = high - (high - low) / 2;
+		printer(array, low, high);
+		mid = (low + high) / 2;
 		if (value == array[mid])
 			return (mid);
 		else if (value < array[mid])
-		{
-			high = mid - 1;
-			printer(array, low, high);
-		}
+			high = mid;
 		else
-		{
 			low = mid + 1;
-			printer(array, low - 1, high);
-		}
 	}
 	return (-1);
 }
