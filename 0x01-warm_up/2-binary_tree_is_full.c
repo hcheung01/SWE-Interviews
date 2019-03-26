@@ -2,7 +2,7 @@
 
 /**
  * binary_tree_is_full - tree checker
- * @binary_tree_t: pointer to tree node or parent node
+ * @tree: pointer to tree node or parent node
  *
  * Description: check if full tree
  * Return: 0 if tree is NULL
