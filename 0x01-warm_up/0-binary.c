@@ -1,4 +1,3 @@
-#include <stdio.h>
 #include "search_algos.h"
 
 /**
@@ -12,9 +11,9 @@
  **/
 int binary_search(int *array, size_t size, int value)
 {
-	int low = 0;
-	int high = size - 1;
-	int mid  = NULL;
+	size_t low = 0;
+	size_t high = size - 1;
+	size_t mid  = NULL;
 
 	if (array == NULL)
 		return (-1);
@@ -48,7 +47,7 @@ int binary_search(int *array, size_t size, int value)
  * Description: print sub array
  * Return: void
  */
-void printer(int *array, int i, int size)
+void printer(int *array, size_t i, size_t size)
 {
 	printf("Searching in array: ");
 	for (; i <= size; i++)
