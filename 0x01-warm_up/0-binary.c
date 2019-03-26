@@ -1,25 +1,5 @@
 #include <stdio.h>
-
-/**
- * printer - print array
- * @array: sub-array to print
- * @i: starting index
- * @size: length of sub-array
- *
- * Description: print sub array
- * Return: void
- */
-void printer(int *array, int i, int size)
-{
-	printf("Searching in array: ");
-	for (; i <= size; i++)
-	{
-		printf("%d", array[i]);
-		if (i < size)
-			printf(", ");
-	}
-	printf("\n");
-}
+#include "search_algos.h"
 
 /**
  * binary_search - search algorithm
@@ -36,11 +16,8 @@ int binary_search(int *array, size_t size, int value)
 	int high = size - 1;
 	int mid  = NULL;
 
-	if (array == NULL)
-		return (-1);
-
 	printer(array, low, high);
-	while (low <= high)
+	while (array && low <= high)
 	{
 		mid = high - (high - low) / 2;
 		if (value == array[mid])
@@ -57,4 +34,25 @@ int binary_search(int *array, size_t size, int value)
 		}
 	}
 	return (-1);
+}
+
+/**
+ * printer - print array
+ * @array: sub-array to print
+ * @i: starting index
+ * @size: length of sub-array
+ *
+ * Description: print sub array
+ * Return: void
+ */
+void printer(int *array, int i, int size)
+{
+        printf("Searching in array: ");
+        for (; i <= size; i++)
+        {
+                printf("%d", array[i]);
+                if (i < size)
+                        printf(", ");
+        }
+        printf("\n");
 }
